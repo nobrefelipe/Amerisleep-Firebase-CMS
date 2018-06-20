@@ -1,0 +1,141 @@
+
+.form-row{
+
+  margin-bottom: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  float: left;
+
+
+  label{
+
+    float: left;
+
+    width: 100%;
+
+    color: $grey;
+
+    font-size: 13px;
+
+    line-height: 16px;
+
+    margin-bottom: 10px;
+
+
+
+    &.select-label{
+
+      position: relative;
+
+      margin-bottom: 0;
+
+
+      &:after{
+
+        position: absolute;
+
+        right: 0;
+
+        bottom: 0;
+
+        z-index: 0;
+
+        height: 48px;
+
+        width: 48px;
+
+        content: "";
+
+        background-color: rgba(244,247,249,0.4);
+
+        background-image: url("../img/chevron.png");
+
+        background-size: 9px 5px;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        border-left: 1px solid #E9EFF4;
+
+      }
+
+    }
+
+  }
+
+
+  textarea{
+
+    line-height: 28px;
+
+    max-width: 100%;
+
+  }
+
+  select{
+
+    position: relative;
+
+    cursor: pointer;
+
+    float: left;
+
+    width: 100%;
+
+    border: 1px solid #E9EFF4;
+
+    background: transparent;
+
+    padding: 10px 20px;
+
+    font-size: 12px;
+
+    line-height: 26px;
+
+    color: $grey;
+
+    margin-top: 10px;
+
+    z-index: 100;
+
+    // remove default styles
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+
+  }
+
+
+  .form-controller{
+
+    border: 1px solid #E9EFF4;
+
+    border-radius: 4px;
+
+    background-color: #FFFFFF;
+
+    color: $grey;
+
+    padding: 12px 20px 12px 20px;
+
+    font-size: 12px;
+
+    &:focus{
+
+      border-color: lighten($blue, 40%);
+
+      box-shadow: 0 !important;
+
+      outline: none !important;
+    }
+
+  }
+
+}

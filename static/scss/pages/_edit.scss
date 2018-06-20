@@ -1,0 +1,193 @@
+.edit{
+
+
+  header{
+
+    float: left;
+
+    width: 100%;
+
+    margin-bottom: 40px;
+
+    h2{
+
+      margin-bottom: 0;
+
+      span{
+
+        text-transform: uppercase;
+
+      }
+
+    }
+
+
+    .saved{
+
+      float: left;
+
+      color: $grey;
+
+      font-size: 10px;
+
+      line-height: 12px;
+
+      margin-left: 27px;
+
+      &:before{
+
+        content: "";
+
+        width: 10px;
+
+        height: 10px;
+
+        float: left;
+
+        margin-right: 5px;
+
+        margin-top: 2px;
+
+        background-image: url("../img/saved.png");
+
+        background-size: contain;
+
+        background-repeat: no-repeat;
+
+        background-position: center;
+
+        transition: all .2s ease;
+
+      }
+
+    }
+
+  }
+
+
+  .forms{
+
+    float: left;
+
+
+    .left{
+
+      float: left;
+
+      width: calc(60% - 15px);
+
+      @include tablet{
+        width: 100%;
+      }
+
+      @include tabletLandscape{
+
+        width: calc(50% - 15px);;
+
+      }
+
+    }
+
+    .right{
+
+      float: left;
+
+      width: calc(40% - 15px);
+
+      @include tablet{
+
+        width: 100%;
+
+      }
+
+      @include tabletLandscape{
+
+        width: calc(50% - 15px);;
+
+      }
+
+    }
+
+    .sizes{
+
+      .is-half{
+
+        width: calc((100% * 6 / 12) - 15px);
+
+      }
+
+      // SIZES ITEM
+      &-item{
+
+        float: left;
+
+        width: 100%;
+
+        padding: 10px 15px;
+
+        margin-bottom: 10px;
+
+        border: 1px solid #E9EFF4;
+
+        border-radius: 4px;
+
+        background-color: #FFFFFF;
+
+        input{
+
+          font-size: 13px;
+
+          color: $grey;
+
+          border: 1px solid transparent;
+
+          background: transparent;
+
+          width: 20%;
+
+          outline: none !important;
+
+          transition: all .3s ease;
+
+          &:hover{
+
+            border-color: lighten($blue, 30%);
+
+          }
+
+        }
+
+      }
+
+
+    }
+
+
+    .reviews-item{
+
+      float: left;
+
+      width: 100%;
+
+      padding: 10px 15px;
+
+      margin-bottom: 10px;
+
+      border: 1px solid #E9EFF4;
+
+      border-radius: 4px;
+
+      background-color: #FFFFFF;
+
+      .rating-component{
+        width: calc(100% - 60px) !important;
+      }
+
+    }
+
+
+  }
+
+
+
+}

@@ -1,0 +1,64 @@
+<section class="login is-flexy is-middle is-center is-column">
+
+
+  <div class="box is-flexy is-wrap is-column is-center">
+
+
+    <img src="/static/img/logo.png" alt="Amerisleep" class="logo">
+
+
+    <form v-on:submit.prevent class="is-full">
+
+        <!--<div class="form-row">-->
+
+            <!--<input type="text" placeholder="Username" class="form-controller" id="username">-->
+
+        <!--</div>-->
+
+        <div class="form-row">
+
+          <input type="email" placeholder="Email" v-model="creds.email" :class="{ invalid : !isValid }" class="form-controller">
+
+        </div>
+
+
+        <div class="form-row">
+
+          <input type="password" placeholder="Password" v-model="creds.password" :class="{ invalid : !isValid }" class="form-controller">
+
+        </div>
+
+
+        <div class="form-row info">
+
+          <span>If you can't remember your details please <a href="mailto:felipe.nobre@wmpcreative.com?subject=Amerisleep CMS login troubles">contact</a> the administrator of your system.</span>
+
+        </div>
+
+
+        <button type="submit" :class="{ isLogging : isLogging }" class="button is-primary" @click="onLogin">
+
+          <span v-if="!isLogging">Log in</span>
+          <span v-if="isLogging"><img src="/static/img/loading.gif" width="22px"></span>
+
+        </button>
+
+        <!--<button class="btn btn-primary" @click="onSignup">Sign up</button>-->
+
+
+    </form>
+
+
+    <div v-if="!isValid" class="text-alert">
+      Invalid email or password. Please try again or <a href="mailto:felipe.nobre@wmpcreative.com?subject=Amerisleep CMS login troubles">contact</a> the administrator!
+    </div>
+
+
+  </div>
+
+
+
+
+
+</section>
+

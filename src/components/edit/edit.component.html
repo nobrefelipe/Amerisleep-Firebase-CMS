@@ -1,0 +1,195 @@
+
+<section class="edit">
+
+  <div class="wrapper">
+
+
+    <!-- EDIT PRODUCT HEADER -->
+    <header  class="is-flexy is-between is-middle is-full">
+
+      <!-- LEFT SIDE -->
+      <div class="is-flexy is-middle">
+
+
+        <router-link to="/amerisleep-cms" class="back">Back</router-link>
+
+        <h2>Editing <span>{{ $route.params.product }}</span></h2>
+
+        <span v-if="saved" class="saved">Saved</span>
+
+
+      </div>
+
+      <!-- RIGHT SIDE-->
+      <div class="is-flexy">
+
+        <button class="button is-primary" @click="onSubmitContent">Save</button>
+
+      </div>
+
+    </header>
+
+
+    <div class="forms is-flexy is-between is-full is-top">
+
+      <div class="left">
+
+        <div class="content box is-full">
+
+
+          <div class="form-row">
+
+            <label>TITLE</label>
+            <input type="text" placeholder="Title"  v-model="content.title" class="form-controller">
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label>FIRMNESS</label>
+            <input type="text" placeholder="Firmness"  v-model="content.firmness" class="form-controller is-quarter">
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label>SCREENSAVER PRICE</label>
+
+            <label>Price</label>
+            <input type="text" placeholder="Price"  v-model="content.price" class="form-controller is-8of12">
+
+
+            <label style="margin-top: 10px;">Discounted Price</label>
+            <input type="text" placeholder="Price"  v-model="content.promo" class="form-controller is-8of12">
+
+
+          </div>
+
+
+          <div class="form-row">
+
+            <textarea placeholder="Content" rows="7" cols="80"  v-model="content.body" class="form-controller"></textarea>
+
+          </div>
+
+
+        </div> <!--/.content-->
+
+
+      </div>
+      <!-- LEFT -->
+
+
+      <div class="right">
+
+        <div class="sizes box">
+
+          <!-- ADD SIZE - Dropdowns -->
+          <div class="form-row">
+
+            <label>ADD SIZE</label>
+
+            <div class="is-flexy is-between">
+
+              <div class="is-half is-flexy is-column">
+
+                <label class="select-label">
+
+                  Name
+
+                  <select  v-model="size.name" id="sizeName">
+
+                    <option value='Twin' selected>Twin</option>
+                    <option value='Twin XL'>Twin XL</option>
+                    <option value='Full'>Full</option>
+                    <option value='Queen'>Queen</option>
+                    <option value='King'>King</option>
+                    <option value='California King'>California King</option>
+                    <option value='Split King'>Split King</option>
+
+                  </select>
+
+                </label>
+
+              </div>
+
+
+              <div class="is-half is-flexy is-column">
+
+                <label class="select-label">
+
+                  Size
+
+                  <select  v-model="size.size">
+
+                    <option value='38" x 74"' selected>38" x 74"</option>
+                    <option value='38" x 80"'>38" x 80"</option>
+                    <option value='54" x 75"'>54" x 75"</option>
+                    <option value='60" x 80"'>60" x 80"</option>
+                    <option value='76" x 80"'>76" x 80"</option>
+                    <option value='72" x 84"'>72" x 84"</option>
+                    <option value='38" x 80" - 2'>38" x 80" - 2</option>
+
+                  </select>
+
+                </label>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <!-- ADD SIZE - Price -->
+          <div class="form-row">
+
+            <label>Price</label>
+            <input  type="text" v-model="size.price" placeholder="Price" class="form-controller">
+
+            <label style="margin-top: 8px;">Discounted Price</label>
+            <input  type="text" v-model="size.promo" placeholder="Price" class="form-controller">
+
+          </div>
+
+          <!-- ADD SIZE - Save -->
+          <div class="form-row is-center is-middle">
+
+            <button class="button is-primary is-big" @click="onAddSize">Add</button>
+
+          </div>
+
+          <!-- SIZES LISTING-->
+          <div class="form-row"> <!-- v-sortable="{onEnd: reorder}" -->
+
+            <div class="sizes-item" v-for=" (item , key) in DB_SIZES"> <!--store_sizes-->
+
+              <input :value="item.name"  @blur="updateSizeAttribute(item, $event.target.value, 'name')">
+
+              <input :value="item.size"  @blur="updateSizeAttribute(item, $event.target.value, 'size')">
+
+              <input :value="item.price" @blur="updateSizeAttribute(item, $event.target.value, 'price')">
+
+              <input :value="item.promo" @blur="updateSizeAttribute(item, $event.target.value, 'promo')" placeholder="Promotion Price">
+
+              <span @click="onDelete(item)" class="button is-danger is-small">Delete</span>
+
+            </div>
+
+          </div>
+
+
+        </div><!--/.sizes-->
+
+      </div>
+
+    </div>
+    <!-- RIGHT -->
+
+
+  </div>
+
+</section>
+

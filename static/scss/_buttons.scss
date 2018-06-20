@@ -1,0 +1,125 @@
+.button{
+
+  padding: 14px 30px;
+
+  font-size: 13px;
+
+  line-height: 16px;
+
+  text-align: center;
+
+  border: 0;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+  transition: all .3s ease-in;
+
+  outline: none !important;
+
+  font-weight: 100;
+
+
+  &.is-primary{
+
+    background: $blue;
+
+    color: #fff;
+
+    &:hover{
+
+      background: lighten($blue, 10%);
+
+    }
+
+  }
+
+
+  &.is-danger{
+
+    color: $red;
+
+    border: 1px solid $red;
+
+    &:hover{
+
+      background: $red;
+
+      color: #fff;
+
+    }
+
+  }
+
+
+  &.is-cancel{
+
+    background-color: #E9EFF4;
+
+    color: $light-grey;
+
+  }
+
+
+  &.is-big{
+
+    width: 240px;
+
+  }
+
+
+  &.is-small{
+
+    font-size: 11px;
+
+    padding: 7px 12px;
+  }
+
+}
+
+
+
+.back{
+
+  position: relative;
+
+  color: $blue;
+
+  margin-right: 28px;
+
+  &:before{
+
+    content: "";
+
+    width: 18px;
+
+    height: 8px;
+
+    float: left;
+
+    margin-right: 5px;
+
+    margin-top: 3px;
+
+    background-image: url("../img/back.png");
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    transition: all .2s ease;
+
+  }
+
+  &:hover{
+
+    &:before{
+      transform: translateX(-4px);
+    }
+
+  }
+
+}

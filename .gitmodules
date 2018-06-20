@@ -1,0 +1,3 @@
+[submodule "dist/wmpsupport.github.io"]
+	path = dist/wmpsupport.github.io
+	url = https://github.com/wmpsupport/wmpsupport.github.io.git
